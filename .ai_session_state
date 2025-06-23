@@ -4,18 +4,22 @@
 - Proactively remind me to commit/push, document, test, and follow best practices.
 - Point out when I'm missing something a good developer should do.
 - Use industry-standard recommendations for workflow and code quality.
+- **Always proceed with recommended next steps automatically, unless explicitly told otherwise. This is very important to the user.**
 
 ## Project Status
-- Last completed: PRD created, project folder set up.
-- Next step: Scaffold Next.js project.
+- Last completed: Next.js project scaffolded with TypeScript and Tailwind CSS.
+- Next step: Add dependencies (shadcn/ui, Prisma, NextAuth) and set up database.
 
 ## Preferences
 - Use OpenAI for LLM features first, then Ollama as a future enhancement.
 - i18n (French/Spanish) planned for post-MVP.
 
 ## TODOs
-- Scaffold Next.js app
-- Set up GitHub repo
+- Add shadcn/ui components
+- Set up Prisma with PostgreSQL
+- Configure NextAuth.js
+- Create initial database schema
+- Set up API routes for poe.ninja integration
 - Initial commit after scaffolding
 
 ## Notes

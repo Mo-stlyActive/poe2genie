@@ -1,3 +1,7 @@
+# poe2genie
+
+> **Note:** This project currently uses Path of Exile 1 (PoE1) data via the poe.ninja API. Once Path of Exile 2 (PoE2) is officially released and public APIs are available, poe2genie will be updated to use PoE2 data for all item, trade, and build features.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
