@@ -1,6 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
+import NavBar from "../../NavBar";
 
 interface Build {
   name: string;
@@ -59,8 +60,9 @@ export default function BuildViewPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400 py-16 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400">
+      <NavBar />
+      <div className="max-w-4xl mx-auto py-16 px-4">
         {/* Header */}
         <div className="bg-purple-950/90 rounded-2xl shadow-2xl border-2 border-fuchsia-700/40 p-8 mb-8">
           <div className="text-center mb-6">

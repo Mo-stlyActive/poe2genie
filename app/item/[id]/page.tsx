@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import NavBar from "../../NavBar";
 
 interface ItemDetailsProps {
   params: { id: string };
@@ -21,8 +22,9 @@ export default async function ItemPage({ params }: ItemDetailsProps) {
   if (!item) return notFound();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400 flex flex-col items-center py-16 px-4">
-      <div className="max-w-xl w-full bg-purple-950/80 rounded-2xl shadow-2xl border-2 border-fuchsia-700/40 p-8 flex flex-col items-center">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400 flex flex-col items-center">
+      <NavBar />
+      <div className="max-w-xl w-full bg-purple-950/80 rounded-2xl shadow-2xl border-2 border-fuchsia-700/40 p-8 flex flex-col items-center py-16 px-4">
         <img src={item.icon} alt={item.name} className="w-24 h-24 rounded-lg mb-4 bg-black/30 border border-fuchsia-700/40" />
         <h1 className="text-3xl font-bold text-white mb-2 text-center">{item.name}</h1>
         <div className="text-fuchsia-200 text-lg mb-2 text-center">{item.typeLine}</div>

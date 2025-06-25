@@ -1,29 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import NavBar from "./NavBar";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400">
-      {/* Header */}
-      <header className="border-b border-fuchsia-700/40 bg-purple-950/60 backdrop-blur-sm shadow-md">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-fuchsia-600 rounded-lg flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-sm">P2</span>
-              </div>
-              <h1 className="text-2xl font-bold text-white">poe2genie</h1>
-            </div>
-            <nav className="hidden md:flex space-x-6">
-              <a href="/" className="text-white font-medium">Home</a>
-              <a href="/search" className="text-fuchsia-200 hover:text-white transition-colors">Item Search</a>
-              <a href="/builds" className="text-fuchsia-200 hover:text-white transition-colors">Build Planner</a>
-              <a href="/ai" className="text-fuchsia-200 hover:text-white transition-colors">AI Tools</a>
-            </nav>
-          </div>
-        </div>
-      </header>
-
+      <NavBar />
       {/* Hero Section */}
       <main className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">

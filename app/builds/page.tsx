@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import PassiveTree from "./PassiveTree";
+import NavBar from "../NavBar";
 
 interface Build {
   name: string;
@@ -349,8 +350,9 @@ export default function BuildPlannerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400 py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400">
+      <NavBar />
+      <div className="max-w-6xl mx-auto py-16 px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Build Planner</h1>
           <p className="text-fuchsia-200 text-lg">Create and share your Path of Exile builds</p>
