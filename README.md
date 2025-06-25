@@ -1,8 +1,29 @@
 # poe2genie
 
-> **Note:** This project currently uses Path of Exile 1 (PoE1) data via the poe.ninja API. Once Path of Exile 2 (PoE2) is officially released and public APIs are available, poe2genie will be updated to use PoE2 data for all item, trade, and build features.
+poe2genie is a modern, modular, and extensible Path of Exile build & trade AI helper, designed with a focus on Path of Exile 2. The app features a dark, PoE-inspired theme with a purple/orange color palette, and is built using Next.js, TypeScript, and Tailwind CSS.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Features
+
+- **Modern UI**: Clean, dark, and responsive interface inspired by PoE, with a purple/orange color palette.
+- **AI-Ready**: Designed for future AI-powered build suggestions and trade analysis.
+- **CORS Proxy**: Uses a Next.js API route to proxy poe.ninja API requests, avoiding CORS issues and keeping the frontend clean.
+- **Item Search**: Search across all item types and leagues, with dropdowns for league and item type. Results are merged if "All" is selected.
+- **Item Details**: Dedicated item details page for each item, displaying all relevant info.
+- **Build Planner**: Local-storage-based build planner with shareable links and equipment slots for all gear types. Equipment selection uses a searchable picker, ready for future AI integration.
+- **Extensible**: Modular codebase, ready for future enhancements and PoE2 data integration.
+
+## PoE2 Data
+
+**Note:** All public APIs (including poe.ninja) currently provide PoE1 data. The codebase and README include TODOs to revisit this when PoE2 launches and public data becomes available.
+
+## Development
+
+- Built with Next.js, TypeScript, and Tailwind CSS.
+- Modern, maintainable, and future-proofed for PoE2.
+
+---
+
+For more details, see the code and comments throughout the project.
 
 ## Getting Started
 

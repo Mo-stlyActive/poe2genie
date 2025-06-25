@@ -1,0 +1,11 @@
+[
+  { "type": "Weapon", "name": "Jewelled Foil" },
+  { "type": "Weapon", "name": "Vaal Axe" },
+  { "type": "Weapon", "name": "Imperial Bow" },
+  { "type": "Armour", "name": "Vaal Regalia" },
+  { "type": "Armour", "name": "Astral Plate" },
+  { "type": "Armour", "name": "Hubris Circlet" },
+  { "type": "Accessory", "name": "Two-Stone Ring" },
+  { "type": "Accessory", "name": "Leather Belt" },
+  { "type": "Accessory", "name": "Onyx Amulet" }
+] 

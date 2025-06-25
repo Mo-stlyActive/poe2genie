@@ -133,4 +133,29 @@ poe2genie: Path of Exile 2 Build & Trade AI Helper
 ## Notes
 - This project is designed to be as cost-effective as possible, leveraging free tiers and open-source tools.
 - AI features will start with OpenAI API and may migrate to open-source LLMs for zero-cost operation in the future.
-- Internationalization is a planned enhancement to further increase the project's value for European employers. 
+- Internationalization is a planned enhancement to further increase the project's value for European employers.
+
+## Vision
+A modern, AI-powered Path of Exile 2 build & trade helper, with a focus on extensibility, modularity, and a beautiful, PoE-inspired UI.
+
+## Features (Current)
+- Modern, dark UI with purple/orange color palette
+- CORS proxy for poe.ninja API requests
+- Item search across all item types and leagues
+- Dedicated item details page
+- Build planner with equipment slots and searchable equipment picker
+- Local storage for builds and shareable links
+- Modular, extensible codebase
+
+## AI & PoE2 Focus
+- Designed for future AI integration (build suggestions, trade analysis)
+- All public APIs currently provide PoE1 data; codebase and docs include TODOs to revisit for PoE2
+
+## Limitations
+- No PoE2 data available yet (pending public API release)
+- Some features (e.g., AI build suggestions) are placeholders for future development
+
+## Next Steps
+- Integrate PoE2 data when available
+- Add AI-powered build and trade features
+- Expand build planner and item database 
