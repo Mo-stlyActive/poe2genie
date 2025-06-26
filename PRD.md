@@ -159,3 +159,64 @@ A modern, AI-powered Path of Exile 2 build & trade helper, with a focus on exten
 - Integrate PoE2 data when available
 - Add AI-powered build and trade features
 - Expand build planner and item database 
+
+## TODO: AI Improvements & Enhancements
+
+### Phase 1: Context Enhancement (High Priority)
+- [ ] **Real-time Data Integration**
+  - Feed current league mechanics and meta data to AI prompts
+  - Include real-time item prices and availability from poe.ninja
+  - Add current build popularity data and meta analysis
+  - Include recent patch notes and balance changes
+
+- [ ] **Enhanced Prompting**
+  - Implement few-shot prompting with high-quality PoE examples
+  - Add structured output formats (JSON) for better parsing
+  - Include build templates and skill gem setups
+  - Add item recommendations with current prices
+
+### Phase 2: Personalization & User Experience (Medium Priority)
+- [ ] **User Context & Memory**
+  - Remember user preferences and playstyle
+  - Adapt responses based on user's experience level
+  - Consider user's current build and suggest improvements
+  - Track user's previous questions for context
+
+- [ ] **Advanced Features**
+  - Build comparison and optimization suggestions
+  - Item crafting advice with current meta
+  - Farming strategy recommendations
+  - Trade advice with current market conditions
+  - Leveling guides and progression paths
+
+### Phase 3: Cost Optimization & Performance (Low Priority)
+- [ ] **Efficiency Improvements**
+  - Implement response caching for common questions
+  - Use local AI models (Ollama) for basic queries
+  - Implement smart prompt engineering to reduce token usage
+  - Add conversation memory to reduce redundant context
+
+- [ ] **Alternative AI Providers**
+  - Research and implement Claude API integration
+  - Consider local models for cost reduction
+  - Implement fallback mechanisms for API failures
+
+### Phase 4: Advanced AI Features (Future)
+- [ ] **Build Optimization**
+  - AI-powered passive tree optimization
+  - Skill gem setup recommendations
+  - Item synergy analysis
+  - Build viability scoring
+
+- [ ] **Market Analysis**
+  - Price trend predictions
+  - Investment opportunity identification
+  - Market arbitrage suggestions
+  - Supply/demand analysis
+
+### Implementation Notes
+- All improvements should maintain the current UI/UX consistency
+- Consider implementing feature flags for gradual rollout
+- Monitor API usage and costs closely
+- Gather user feedback to prioritize improvements
+- Maintain backward compatibility during updates 

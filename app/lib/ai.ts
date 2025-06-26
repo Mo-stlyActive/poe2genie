@@ -1,6 +1,44 @@
 // AI Service Layer for poe2genie
 // Handles all AI interactions using OpenAI API
 
+// TODO: Future AI Improvements
+// 1. CONTEXT ENHANCEMENT:
+//    - Feed current league mechanics and meta data to AI
+//    - Include real-time item prices and availability from poe.ninja
+//    - Add current build popularity data and meta analysis
+//    - Include recent patch notes and balance changes
+//
+// 2. RESPONSE QUALITY:
+//    - Implement few-shot prompting with high-quality PoE examples
+//    - Add structured output formats (JSON) for better parsing
+//    - Include build templates and skill gem setups
+//    - Add item recommendations with current prices
+//
+// 3. PERSONALIZATION:
+//    - Remember user preferences and playstyle
+//    - Adapt responses based on user's experience level
+//    - Consider user's current build and suggest improvements
+//    - Track user's previous questions for context
+//
+// 4. REAL-TIME DATA INTEGRATION:
+//    - Fetch current league data and feed to AI
+//    - Include current item prices and market trends
+//    - Add build popularity statistics
+//    - Include current meta analysis from community sources
+//
+// 5. ADVANCED FEATURES:
+//    - Build comparison and optimization suggestions
+//    - Item crafting advice with current meta
+//    - Farming strategy recommendations
+//    - Trade advice with current market conditions
+//    - Leveling guides and progression paths
+//
+// 6. COST OPTIMIZATION:
+//    - Implement response caching for common questions
+//    - Use local AI models (Ollama) for basic queries
+//    - Implement smart prompt engineering to reduce token usage
+//    - Add conversation memory to reduce redundant context
+
 export interface AIResponse {
   success: boolean;
   data?: string;
@@ -203,4 +241,4 @@ class AIService {
 }
 
 // Export a singleton instance
-export const aiService = new AIService(); 
+export const aiService = new AIService();
