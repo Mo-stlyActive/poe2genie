@@ -101,6 +101,31 @@ poe2genie/
 - Trading advice and market insights
 - Game mechanics explanations
 
+## Current Status
+
+✅ **Completed Features**:
+- Full-stack Next.js application with TypeScript
+- Item search across all leagues and item types
+- Build planner with equipment and passive tree
+- AI integration with OpenAI API
+- Responsive design with PoE-inspired theme
+- CORS proxy for external API integration
+- Rate limiting and error handling
+- Local storage for build persistence
+
+🔄 **In Development**:
+- Enhanced AI features with real-time data integration
+- Database integration for user accounts
+- Advanced build planner features
+- Performance optimizations
+
+📋 **Planned Features**:
+- User authentication and profiles
+- Advanced trade features
+- Community build sharing
+- Internationalization (French, Spanish)
+- Mobile app development
+
 ## Contributing
 
 1. Fork the repository
