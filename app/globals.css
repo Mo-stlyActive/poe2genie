@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,4 +53,29 @@ a {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: none; }
+}
+
+.font-hero {
+  font-family: 'Audiowide', Arial, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes starfield {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 1000px 500px, 800px 400px, 600px 300px; }
+}
+
+.starfield {
+  background-image:
+    radial-gradient(ellipse at 20% 30%, #fff3 1px, transparent 40%),
+    radial-gradient(ellipse at 70% 60%, #fff2 1.5px, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, #fff1 1.2px, transparent 40%);
+  background-size: 1000px 500px, 800px 400px, 600px 300px;
+  animation: starfield 60s linear infinite;
 }

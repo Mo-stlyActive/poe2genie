@@ -67,6 +67,12 @@ export default function PassiveTree({
   return (
     <div className="bg-purple-950/80 rounded-2xl shadow-xl border-2 border-fuchsia-700/40 p-6 mb-8">
       <h2 className="text-2xl font-bold text-white mb-4">Passive Skill Tree</h2>
+      {/* PoE2 Placeholder Badge */}
+      <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-orange-500/20 to-fuchsia-500/20 border border-orange-400/40 rounded-full backdrop-blur-sm animate-pulse mb-3">
+        <div className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-ping"></div>
+        <span className="text-orange-300 text-xs font-medium">PoE1 Data • PoE2 Coming Soon</span>
+        <div className="w-1.5 h-1.5 bg-fuchsia-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+      </div>
       <div className="mb-2 text-fuchsia-200">Skill Points Used: {selectedNodes.length}</div>
       <div className="overflow-auto" style={{ maxWidth: "100%", maxHeight: 600 }}>
         <svg width={width} height={height} style={{ background: "#1a102a" }}>

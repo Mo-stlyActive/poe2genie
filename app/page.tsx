@@ -4,29 +4,51 @@ import NavBar from "./NavBar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-cyan-400 relative overflow-hidden">
       <NavBar />
+      {/* Starfield Animated Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none starfield" />
       {/* Hero Section */}
-      <main className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Your AI-Powered
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-fuchsia-400 to-purple-600">
-              Path of Exile 2
-            </span>
-            Companion
-          </h2>
-          <p className="text-xl text-fuchsia-100 max-w-3xl mx-auto mb-8">
-            Search items, plan builds, and get AI-powered advice for Path of Exile 2. 
-            Everything you need to master the game, all in one place.
+      <main className="container mx-auto px-4 py-24 relative z-10">
+        <div className="text-center mb-20">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 font-hero drop-shadow-[0_2px_24px_rgba(0,255,255,0.18)]">
+            Forge Your Legend.<br />
+            <span className="block text-4xl md:text-6xl font-black tracking-tight bg-gradient-to-r from-fuchsia-400 via-orange-400 to-cyan-300 bg-clip-text text-transparent animate-gradient-x">poe2genie</span>
+          </h1>
+          <p className="text-2xl md:text-3xl text-fuchsia-100 max-w-2xl mx-auto mb-10 font-medium drop-shadow-lg">
+            The ultimate AI-powered build & trade companion for Path of Exile 2.<br />
+            <span className="text-cyan-300">Search. Plan. Dominate. Repeat.</span>
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/search" className="bg-orange-400/90 hover:bg-orange-300 text-fuchsia-900 px-8 py-3 rounded-lg font-semibold transition-all text-center border-2 border-fuchsia-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-fuchsia-400">
-              Start Searching Items
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+            <a href="/search" className="relative group inline-block px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-orange-400 via-fuchsia-400 to-cyan-400 text-fuchsia-950 shadow-xl border-2 border-fuchsia-200 hover:scale-105 hover:shadow-2xl transition-all focus:outline-none focus:ring-4 focus:ring-cyan-400/40">
+              <span className="absolute -inset-1 bg-gradient-to-r from-orange-400 via-fuchsia-400 to-cyan-400 rounded-xl blur-lg opacity-60 group-hover:opacity-90 transition-all z-0" />
+              <span className="relative z-10 flex items-center gap-2">
+                <svg className="w-6 h-6 text-orange-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                Start Searching
+              </span>
             </a>
-            <a href="/builds" className="border-2 border-fuchsia-300 text-fuchsia-100 px-8 py-3 rounded-lg font-semibold hover:bg-fuchsia-900/30 transition-all text-center shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-orange-300">
-              Create Build
+            <a href="/builds" className="relative group inline-block px-10 py-4 rounded-xl font-bold text-lg border-2 border-fuchsia-300 text-fuchsia-100 bg-purple-950/60 hover:bg-fuchsia-900/40 shadow-xl hover:scale-105 hover:shadow-2xl transition-all focus:outline-none focus:ring-4 focus:ring-fuchsia-400/40 animate-pulse">
+              <span className="absolute -inset-1 bg-gradient-to-r from-fuchsia-400 via-orange-400 to-cyan-400 rounded-xl blur-lg opacity-40 group-hover:opacity-70 transition-all animate-pulse z-0" />
+              <span className="relative z-10 flex items-center gap-2">
+                <svg className="w-6 h-6 text-fuchsia-300 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                Create Build
+              </span>
             </a>
+          </div>
+          {/* Feature Tags */}
+          <div className="flex flex-wrap gap-4 justify-center mt-6 animate-fade-in">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-900/70 border border-fuchsia-400 text-fuchsia-100 font-semibold text-sm shadow-md animate-float" style={{animationDelay:'0.1s'}}>
+              <svg className="w-4 h-4 text-cyan-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12.93V15a1 1 0 11-2 0v-.07A6.002 6.002 0 014 9a6 6 0 1112 0 6.002 6.002 0 01-5 5.93z" /></svg>
+              AI-Powered
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-700/80 border border-fuchsia-300 text-white font-semibold text-sm shadow-md animate-float" style={{animationDelay:'0.3s'}}>
+              <svg className="w-4 h-4 text-cyan-200" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 1116 0A8 8 0 012 10zm8-4a4 4 0 100 8 4 4 0 000-8z" /></svg>
+              Free Forever
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/80 border border-fuchsia-400 text-fuchsia-100 font-semibold text-sm shadow-md animate-float" style={{animationDelay:'0.4s'}}>
+              <svg className="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20"><path d="M3 3h14v2H3V3zm0 4h14v2H3V7zm0 4h14v2H3v-2zm0 4h14v2H3v-2z" /></svg>
+              Ultra Fast
+            </span>
           </div>
         </div>
 

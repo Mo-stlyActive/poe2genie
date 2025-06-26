@@ -352,9 +352,22 @@ export default function BuildPlannerPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400">
       <NavBar />
+      {/* Starfield Animated Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none starfield" />
+      {/* Arcane Glyph/Orb SVG */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none" style={{width:'520px',height:'520px'}}>
+        <svg width="520" height="520" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-30 animate-float">
+        </svg>
+      </div>
       <div className="max-w-6xl mx-auto py-16 px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Build Planner</h1>
+          {/* PoE2 Placeholder Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/20 to-fuchsia-500/20 border border-orange-400/40 rounded-full backdrop-blur-sm animate-pulse mb-4">
+            <div className="w-2 h-2 bg-orange-400 rounded-full animate-ping"></div>
+            <span className="text-orange-300 text-sm font-medium">PoE1 Data • PoE2 Coming Soon</span>
+            <div className="w-2 h-2 bg-fuchsia-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+          </div>
           <p className="text-fuchsia-200 text-lg">Create and share your Path of Exile builds</p>
         </div>
         <div className="grid lg:grid-cols-2 gap-8">

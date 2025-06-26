@@ -1,11 +1,6 @@
 import { notFound } from 'next/navigation';
 import NavBar from "../../NavBar";
 
-interface ItemDetailsProps {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
 const ITEM_TYPE = 'UniqueArmour'; // You can make this dynamic later
 const LEAGUE = 'Affliction';
 
@@ -17,7 +12,7 @@ async function fetchItem(detailsId: string) {
   return item || null;
 }
 
-export default async function ItemPage({ params }: ItemDetailsProps) {
+export default async function ItemPage({ params, searchParams }: any) {
   const item = await fetchItem(params.id);
   if (!item) return notFound();
 
@@ -27,6 +22,11 @@ export default async function ItemPage({ params }: ItemDetailsProps) {
       <div className="max-w-xl w-full bg-purple-950/80 rounded-2xl shadow-2xl border-2 border-fuchsia-700/40 p-8 flex flex-col items-center py-16 px-4">
         <img src={item.icon} alt={item.name} className="w-24 h-24 rounded-lg mb-4 bg-black/30 border border-fuchsia-700/40" />
         <h1 className="text-3xl font-bold text-white mb-2 text-center">{item.name}</h1>
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-orange-500/20 to-fuchsia-500/20 border border-orange-400/40 rounded-full backdrop-blur-sm animate-pulse mb-2">
+          <div className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-ping"></div>
+          <span className="text-orange-300 text-xs font-medium">PoE1 Data • PoE2 Coming Soon</span>
+          <div className="w-1.5 h-1.5 bg-fuchsia-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+        </div>
         <div className="text-fuchsia-200 text-lg mb-2 text-center">{item.typeLine}</div>
         <div className="text-orange-300 font-bold text-2xl mb-4 text-center">{item.chaosValue} <span className="text-fuchsia-200 font-normal text-lg">chaos</span></div>
         {item.explicitModifiers && item.explicitModifiers.length > 0 && (
