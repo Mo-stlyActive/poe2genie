@@ -15,7 +15,7 @@ export default function NavBar() {
             <Link href="/" className="text-white font-medium">Home</Link>
             <Link href="/search" className="text-fuchsia-200 hover:text-white transition-colors">Item Search</Link>
             <Link href="/builds" className="text-fuchsia-200 hover:text-white transition-colors">Build Planner</Link>
-            <Link href="/ai" className="text-fuchsia-200 hover:text-white transition-colors">AI Tools</Link>
+            <Link href="/ai-chat" className="text-fuchsia-200 hover:text-white transition-colors">🤖 AI Chat</Link>
           </nav>
         </div>
       </div>

@@ -1,61 +1,129 @@
-# poe2genie
+# poe2genie: Path of Exile 2 Build & Trade AI Helper
 
-poe2genie is a modern, modular, and extensible Path of Exile build & trade AI helper, designed with a focus on Path of Exile 2. The app features a dark, PoE-inspired theme with a purple/orange color palette, and is built using Next.js, TypeScript, and Tailwind CSS.
+A modern web application for Path of Exile players to search for items, plan builds, and get AI-powered assistance.
 
 ## Features
 
-- **Modern UI**: Clean, dark, and responsive interface inspired by PoE, with a purple/orange color palette.
-- **AI-Ready**: Designed for future AI-powered build suggestions and trade analysis.
-- **CORS Proxy**: Uses a Next.js API route to proxy poe.ninja API requests, avoiding CORS issues and keeping the frontend clean.
-- **Item Search**: Search across all item types and leagues, with dropdowns for league and item type. Results are merged if "All" is selected.
-- **Item Details**: Dedicated item details page for each item, displaying all relevant info.
-- **Build Planner**: Local-storage-based build planner with shareable links and equipment slots for all gear types. Equipment selection uses a searchable picker, ready for future AI integration.
-- **Extensible**: Modular codebase, ready for future enhancements and PoE2 data integration.
+- **Item Search & Trade Values**: Search for items and view current trade values via poe.ninja API
+- **Build Planner**: Create, save, and share character builds with equipment and passive tree planning
+- **AI-Powered Features**:
+  - 🤖 **AI Item Analysis**: Get detailed insights about items, build suggestions, and trade advice
+  - 🤖 **AI Build Advisor**: Receive personalized build advice and improvement suggestions
+  - 🤖 **AI Chat Assistant**: Ask questions about PoE mechanics, builds, trading, and more
+- **Modern UI**: Beautiful, responsive design with PoE-inspired purple/orange theme
+- **PoE2 Ready**: Designed to transition to PoE2 data when available
 
-## PoE2 Data
+## AI Setup
 
-**Note:** All public APIs (including poe.ninja) currently provide PoE1 data. The codebase and README include TODOs to revisit this when PoE2 launches and public data becomes available.
+To enable AI features, you'll need to set up an OpenAI API key:
 
-## Development
+1. **Get an OpenAI API Key**:
+   - Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+   - Create an account and generate an API key
+   - The free tier includes $5 of credits (sufficient for testing)
 
-- Built with Next.js, TypeScript, and Tailwind CSS.
-- Modern, maintainable, and future-proofed for PoE2.
+2. **Configure Environment Variables**:
+   Create a `.env.local` file in the project root:
+   ```bash
+   OPENAI_API_KEY=your_openai_api_key_here
+   NEXT_PUBLIC_BASE_URL=http://localhost:3000
+   ```
 
----
-
-For more details, see the code and comments throughout the project.
+3. **Restart the Development Server**:
+   ```bash
+   npm run dev
+   ```
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/poe2genie.git
+   cd poe2genie
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables** (see AI Setup section above)
+
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser** and navigate to `http://localhost:3000`
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
+- **AI Integration**: OpenAI API (GPT-3.5-turbo)
+- **Data Sources**: poe.ninja API for item prices and data
+- **Deployment**: Vercel (recommended)
+
+## Project Structure
+
+```
+poe2genie/
+├── app/
+│   ├── api/                    # API routes
+│   │   ├── ai/                # AI endpoints
+│   │   └── poe-ninja/         # PoE data proxy
+│   ├── builds/                # Build planner pages
+│   ├── item/                  # Item details pages
+│   ├── search/                # Item search page
+│   ├── ai-chat/               # AI chat interface
+│   └── lib/                   # Utility functions
+│       └── ai.ts              # AI service layer
+├── public/                    # Static assets
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## AI Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Item Analysis
+- Detailed item descriptions and mechanics explanations
+- Build suggestions that benefit from the item
+- Trade advice and price analysis
+- Meta analysis and popularity insights
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build Advisor
+- Personalized build improvement suggestions
+- Alternative approaches and item recommendations
+- Playstyle notes and tips
+- Potential issues and weaknesses identification
 
-## Learn More
+### AI Chat Assistant
+- General PoE knowledge and FAQ
+- Build strategy discussions
+- Trading advice and market insights
+- Game mechanics explanations
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Acknowledgments
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [poe.ninja](https://poe.ninja/) for providing item price data
+- [Path of Exile](https://www.pathofexile.com/) community for inspiration
+- OpenAI for providing the AI capabilities
+
+## Future Enhancements
+
+- PoE2 data integration when available
+- Advanced build planner with visual skill tree
+- Trade tracking and notifications
+- Community features and build sharing
+- Internationalization (French, Spanish support)
+- Local AI models for cost optimization

@@ -312,6 +312,9 @@ export default function BuildPlannerPage() {
   const [shareUrl, setShareUrl] = useState('');
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('general');
+  const [aiAdvice, setAiAdvice] = useState<string | null>(null);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState<string | null>(null);
 
   useEffect(() => {
     const stored = localStorage.getItem('poe2genie_builds');
@@ -346,8 +349,37 @@ export default function BuildPlannerPage() {
   }
 
   function handleViewBuild(b: Build) {
-    router.push(`/builds/view?data=${encodeBuild(b)}`);
+    setBuild(b);
+    setShareUrl('');
+    setAiAdvice(null);
   }
+
+  const handleAiAdvice = async () => {
+    setAiLoading(true);
+    setAiError(null);
+    
+    try {
+      const response = await fetch('/api/ai/build-advice', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ buildData: build }),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to get AI advice');
+      }
+      
+      setAiAdvice(data.advice);
+    } catch (error) {
+      setAiError(error instanceof Error ? error.message : 'An error occurred');
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-fuchsia-700 to-orange-400">
@@ -492,6 +524,20 @@ export default function BuildPlannerPage() {
             {/* Footer Actions */}
             <div className="mt-8 flex gap-4 justify-end">
               <button
+                onClick={handleAiAdvice}
+                disabled={aiLoading}
+                className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 hover:from-cyan-300 hover:to-fuchsia-300 text-purple-900 px-6 py-3 rounded-lg font-bold text-lg border-2 border-cyan-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all transform hover:scale-105 disabled:opacity-50"
+              >
+                {aiLoading ? (
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 border-2 border-purple-900 border-t-transparent rounded-full animate-spin"></div>
+                    Analyzing...
+                  </div>
+                ) : (
+                  '🤖 AI Build Advisor'
+                )}
+              </button>
+              <button
                 onClick={saveBuild}
                 className="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-300 hover:to-orange-400 text-fuchsia-900 px-6 py-3 rounded-lg font-bold text-lg border-2 border-fuchsia-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-fuchsia-400 transition-all transform hover:scale-105"
               >
@@ -499,6 +545,23 @@ export default function BuildPlannerPage() {
               </button>
               {/* Future: Export, Delete buttons */}
             </div>
+
+            {/* AI Advice Results */}
+            {aiError && (
+              <div className="mt-6 p-4 bg-red-900/50 border border-red-400/50 rounded-lg">
+                <p className="text-red-300 text-center">{aiError}</p>
+              </div>
+            )}
+
+            {aiAdvice && (
+              <div className="mt-6 p-6 bg-gradient-to-r from-cyan-900/30 to-fuchsia-900/30 border border-cyan-400/50 rounded-lg">
+                <h3 className="text-xl font-bold text-cyan-300 mb-4 text-center">🤖 AI Build Advisor</h3>
+                <div className="text-fuchsia-100 whitespace-pre-wrap leading-relaxed">
+                  {aiAdvice}
+                </div>
+              </div>
+            )}
+
             {/* Share URL */}
             {shareUrl && (
               <div className="mt-6 bg-purple-900/90 rounded-lg p-4 border border-fuchsia-500/30">
